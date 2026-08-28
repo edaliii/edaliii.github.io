@@ -1,0 +1,9 @@
+.DS_Store
+.claude/
+
+# Raw source material — not needed for the live site
+Videos/
+OBJ/
+Fotos/
+Referencias/
+Portafolio.pdf

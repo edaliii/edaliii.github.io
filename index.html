@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>edalí — cerámica</title>
+<meta name="description" content="Portafolio de cerámica de Edalí. Piezas hechas a mano, una por una.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css?v=28">
+
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+
+<link rel="icon" href="data:,">
+</head>
+<body>
+
+<div class="playground-switch">
+  <span class="playground-switch__label is-current" id="labelDefault">default</span>
+  <button type="button" id="playgroundToggle" class="switch" role="switch" aria-checked="false" aria-label="Modo jugar: arrastrar las piezas con el mouse">
+    <span class="switch__track"><span class="switch__knob"></span></span>
+  </button>
+  <span class="playground-switch__label" id="labelPlay">play</span>
+  <span class="switch-hint" id="switchHint">
+    <svg class="switch-hint__arrow" viewBox="0 0 40 40" aria-hidden="true"><path d="M32 36 Q 10 32 18 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 12 L18 6 L24 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="switch-hint__text">turn me on</span>
+  </span>
+</div>
+
+<div class="toast" id="toast" aria-live="polite"></div>
+
+<header class="menubar">
+  <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
+    <button type="button" class="lang-switch__btn is-current" data-lang="es">ES</button>
+    <span class="lang-switch__sep">/</span>
+    <button type="button" class="lang-switch__btn" data-lang="en">EN</button>
+  </div>
+  <div class="menu-wrap">
+    <button id="menuToggle" class="menu-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menuDropdown">
+      <span data-i18n="menuLabel">Menú</span>
+      <span class="menu-toggle__dot" aria-hidden="true"></span>
+    </button>
+    <nav id="menuDropdown" class="menu-dropdown" hidden>
+      <a href="#about" data-nav data-i18n="aboutHeading">Acerca de</a>
+      <a href="#contact" data-nav data-i18n="contactHeading">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero__stage" id="stage">
+
+      <h1 class="hero__title">
+        <span class="hero__title-line" data-i18n="heroLine">hola me llamo</span>
+        <a href="#about" class="hero__title-name">edalí</a>
+      </h1>
+
+      <svg class="deco deco--star" width="16" height="16" style="--dx:6%; --dy:8%;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.2 9.8 L24 12 L14.2 14.2 L12 24 L9.8 14.2 L0 12 L9.8 9.8 Z"/></svg>
+      <span class="deco deco--dot" style="--dx:91%; --dy:14%; --size:10px;" aria-hidden="true"></span>
+      <svg class="deco deco--star deco--sm" width="10" height="10" style="--dx:93%; --dy:58%;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.2 9.8 L24 12 L14.2 14.2 L12 24 L9.8 14.2 L0 12 L9.8 9.8 Z"/></svg>
+      <span class="deco deco--dot" style="--dx:4%; --dy:60%; --size:8px;" aria-hidden="true"></span>
+      <svg class="deco deco--star deco--sm" width="10" height="10" style="--dx:20%; --dy:94%;" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.2 9.8 L24 12 L14.2 14.2 L12 24 L9.8 14.2 L0 12 L9.8 9.8 Z"/></svg>
+      <span class="deco deco--dot" style="--dx:70%; --dy:96%; --size:9px;" aria-hidden="true"></span>
+
+      <div class="tiles" id="tiles"><!-- tiles injected by js/main.js --></div>
+
+    </div>
+
+    <p class="hero__hint" id="heroHint">toca una pieza</p>
+  </section>
+
+  <section class="manifesto" id="manifesto">
+    <div class="manifesto__verse">
+      <p data-i18n="verseText">“¿Dirá el vaso de barro al que lo formó: ¿por qué me has hecho así? ¿O no tiene potestad el alfarero sobre el barro, para hacer de la misma masa un vaso para honra y otro para deshonra?”</p>
+      <cite data-i18n="verseCite">Romanos 9:20-21, RVR1960</cite>
+    </div>
+    <p class="manifesto__statement" data-i18n="manifestoStatement">que la arcilla<br>sea<br>lo que ella<br>quiera<br>ser</p>
+  </section>
+
+  <section class="about" id="about">
+    <h2 data-i18n="aboutHeading">Acerca de</h2>
+
+    <div class="about__grid">
+      <img class="about__photo" src="assets/about/foto-yo.png?v=2" alt="Edalí junto a algunas de sus piezas de cerámica" data-i18n-alt="aboutPhotoAlt">
+      <div class="about__copy">
+        <p class="about__name" data-i18n="aboutName">puebla, méxico, 1995</p>
+        <p data-i18n="semblanza">Siempre me dijeron que fui creada a la imagen y semejanza de mi Dios, pero conforme más arte creo, más entiendo que Dios me creó como yo quise ser creada. Mi obra es entonces un reflejo de esa creación: un diálogo entre la materia y yo. Una escucha activa de lo que la arcilla quiere ser. Uso mis manos como un medio para alcanzar ese estado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 data-i18n="contactHeading">Contacto</h2>
+    <div class="contact__list">
+      <p data-i18n="contactBlurb">Para comisiones, información y compras, encuéntrame en:</p>
+      <p>
+        <a class="contact__row" href="mailto:edaliguti@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7 L12 13 L20 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>edaliguti@gmail.com</span>
+        </a>
+      </p>
+      <p>
+        <a class="contact__row" href="https://www.instagram.com/edaligc" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.15" fill="currentColor"/></svg>
+          <span>@edaligc</span>
+        </a>
+      </p>
+      <p>
+        <a class="contact__row" href="https://www.instagram.com/incendiarias__/?hl=es" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8 L8 4 H16 L18 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="8" width="16" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span data-i18n="incendiarias">Incendiarias, Frontera 151</span>
+        </a>
+      </p>
+      <p class="contact__row">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 C12 21 5 14 5 9 A7 7 0 0 1 19 9 C19 14 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span>CDMX</span>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__scrim" data-close tabindex="-1"></div>
+  <div class="modal__panel" role="document">
+    <button class="modal__close" data-close type="button" aria-label="Cerrar">
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="modal__media">
+      <div class="modal__viewport">
+        <img class="modal__image" id="modalImage" src="" alt="">
+        <model-viewer class="modal__model" id="modalModel" camera-controls auto-rotate exposure="0.85" shadow-intensity="0.6" tone-mapping="commerce"></model-viewer>
+      </div>
+      <button type="button" class="modal__3d-toggle" id="modal3DToggle" hidden>
+        <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z M12 2 L12 22 M3 7 L12 12 L21 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span id="modal3DToggleLabel">ver en 3D</span>
+      </button>
+      <div class="modal__thumbs" id="modalThumbs"></div>
+      <span class="modal__scroll-hint" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 4 L12 20 M5 13 L12 20 L19 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </div>
+
+    <div class="modal__info">
+      <p class="modal__eyebrow" id="modalIndex">N.01</p>
+      <h3 id="modalTitle"></h3>
+      <dl class="modal__fields">
+        <div><dt data-i18n="fieldDimensions">dimensiones</dt><dd id="modalDimensions">[dimensiones]</dd></div>
+        <div><dt data-i18n="fieldTechnique">técnica</dt><dd id="modalTechnique">[técnica]</dd></div>
+      </dl>
+      <p class="modal__status" id="modalStatus" hidden></p>
+      <p class="modal__desc" id="modalDesc">[descripción — texto texto texto texto texto texto texto texto.]</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js?v=31"></script>
+</body>
+</html>
