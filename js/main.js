@@ -717,6 +717,7 @@
     var SETTLE_DELAY = 300;
 
     function riseAllTiles() {
+      var amp = playgroundActive ? PLAY_AMP : 1;
       tileEls.forEach(function (tile, i) {
         if (dragState && dragState.tile === tile) return;
         var restPiece = ORDER[i];
@@ -727,7 +728,7 @@
           duration: 1.2 + Math.random() * 1,
           delay: Math.random() * 0.5,
           ease: "power2.inOut",
-          onComplete: function () { driftTile(tile, restPiece); }
+          onComplete: function () { driftTile(tile, restPiece, { amp: amp }); }
         });
       });
     }
@@ -738,7 +739,6 @@
       end: "bottom top",
       scrub: 0.5,
       onUpdate: function (self) {
-        if (playgroundActive) return;
         var p = self.progress;
         var wasLocked = fallLocked;
 
@@ -776,12 +776,13 @@
             gsap.set(tile, { y: p * dist, rotation: piece.layout.rot + spin });
           } else if (!tile._driftTween) {
             var restPiece = ORDER[i];
+            var resumeAmp = playgroundActive ? PLAY_AMP : 1;
             tile._driftTween = gsap.to(tile, {
               y: 0,
               rotation: restPiece.layout.rot,
               duration: 0.4,
               ease: "power2.out",
-              onComplete: function () { driftTile(tile, restPiece); }
+              onComplete: function () { driftTile(tile, restPiece, { amp: resumeAmp }); }
             });
           }
         });
