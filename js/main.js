@@ -58,7 +58,9 @@
       ar: 611 / 417,
       model: "mascara-de-mis-emociones.glb",
       descEs: "La mamá de mi papá, mi abuela paterna, tenía un set de matrioshkas que trajo de Rusia en su casa en Coyoacán que me parecían fascinantes. Solo la visitábamos a ella y las matrioshkas dos veces al año, hasta que un día nos las regaló y las llevamos a mi casa en Puebla. Siempre me gustó la forma en que una escondía a la otra y me hizo pensar en que tal vez me gustaban porque podían ocultar lo que sentía realmente, aunque a veces ni siquiera sé qué era eso realmente.",
-      descEn: "My dad's mom, my paternal grandmother, had a set of matryoshkas brought over from Russia in her Coyoacán house that I found fascinating. We only ever visited her and the matryoshkas twice a year, until one day she gave them to us and we took them to my house in Puebla. I always liked the way one hid inside the other and it made me think that maybe I liked how they could hide what I really felt, even if sometimes I didn't even know what that really was."
+      descEn: "My dad's mom, my paternal grandmother, had a set of matryoshkas brought over from Russia in her Coyoacán house that I found fascinating. We only ever visited her and the matryoshkas twice a year, until one day she gave them to us and we took them to my house in Puebla. I always liked the way one hid inside the other and it made me think that maybe I liked how they could hide what I really felt, even if sometimes I didn't even know what that really was.",
+      statusEs: "Vendida",
+      statusEn: "Sold"
     },
     {
       slug: "te-traje-otra-flor",
