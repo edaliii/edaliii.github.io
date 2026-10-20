@@ -827,6 +827,9 @@
       en: "Incendiarias, Frontera 151"
     },
     aboutHeading: { es: "Acerca de", en: "About" },
+    exhibitionsHeading: { es: "Exhibiciones", en: "Exhibitions" },
+    exhib2026Type: { es: "Exposición colectiva", en: "Group exhibition" },
+    exhib2026Venue: { es: "Abierto de Diseño, CDMX", en: "Abierto de Diseño, Mexico City" },
     contactHeading: { es: "Contacto", en: "Contact" },
     fieldDimensions: { es: "dimensiones", en: "dimensions" },
     fieldTechnique: { es: "técnica", en: "technique" }

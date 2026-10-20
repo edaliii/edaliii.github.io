@@ -496,10 +496,10 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 /* ---------------------------------------------------------
    About / Contact
 --------------------------------------------------------- */
-.about, .contact {
+.about, .contact, .exhibitions {
   padding: var(--space-6) var(--space-4);
 }
-.about h2, .contact h2 {
+.about h2, .contact h2, .exhibitions h2 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(34px, 6vw, 56px);
@@ -507,7 +507,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   padding-bottom: var(--space-4);
   margin-bottom: var(--space-4);
 }
-.about h2::after, .contact h2::after {
+.about h2::after, .contact h2::after, .exhibitions h2::after {
   content: "";
   position: absolute;
   left: 0;
@@ -515,6 +515,43 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   width: 40px;
   height: 3px;
   background: var(--olive);
+}
+
+.exhibitions__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 62ch;
+}
+.exhibitions__item + .exhibitions__item {
+  margin-top: var(--space-5);
+}
+.exhibitions__year {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--olive-deep);
+}
+.exhibitions__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.3;
+}
+.exhibitions__title a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--ink-hair);
+  text-underline-offset: 3px;
+}
+.exhibitions__title a:hover {
+  text-decoration-color: var(--ink);
+}
+.exhibitions__meta {
+  font-size: 15px;
+  color: var(--ink-soft);
 }
 
 .about p.about__name {
@@ -566,7 +603,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   }
 }
 @media (max-width: 700px) {
-  .about, .contact { padding: var(--space-5) var(--space-4); }
+  .about, .contact, .exhibitions { padding: var(--space-5) var(--space-4); }
 }
 
 .contact__list {
