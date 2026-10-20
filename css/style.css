@@ -529,7 +529,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .exhibitions__year {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--olive-deep);
